@@ -15,7 +15,7 @@ import java.util.List;
 public class teste1 {
 	public static void main(String[] args) {
 		try{
-			Leitura leitura = new Leitura("/home/acsa/Downloads/dataset.csv");
+			Leitura leitura = new Leitura("/home/acsa/Downloads/dataset_2019_1.csv");
 			ArrayList<Imagem> imagens = new ArrayList<Imagem>();
 			//System.out.println(leitura.lerLinhas());
 			while(leitura.lerLinhas() != 1) {
@@ -33,13 +33,13 @@ public class teste1 {
 			HOGDescriptor hog = new HOGDescriptor();
 			Mat img = new Mat();
 			MatOfFloat features = new MatOfFloat();
-			img = Imgcodecs.imread("/home/acsa/eclipse-workspace/projeto_lp2/src/notperson.png", Imgcodecs.IMREAD_GRAYSCALE);
+			img = Imgcodecs.imread("/home/acsa/Documentos/LP2/Projeto-LP2/noPerson/negative-frame-000019.png", Imgcodecs.IMREAD_GRAYSCALE);
 			Imgproc.resize(img, img, new Size(64,128), 0.5, 0.5, Imgproc.INTER_LINEAR);
 			hog.compute(img,features);
 			List<Float> arraydeFeatures = features.toList();
 			
-			Knn a = new Knn();
-			System.out.println(a.KnnFunction(imagens, arraydeFeatures));
+			Knn a = new Euclidiana();
+			System.out.println(a.KnnFunction(2,imagens, arraydeFeatures));
 		}catch(FileNotFoundException e) {
 			System.out.println(e);
 		}catch(IOException e) {

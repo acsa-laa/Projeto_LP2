@@ -33,7 +33,7 @@ public class teste1 {
 			HOGDescriptor hog = new HOGDescriptor();
 			Mat img = new Mat();
 			MatOfFloat features = new MatOfFloat();
-			img = Imgcodecs.imread("/home/acsa/Documentos/LP2/Projeto-LP2/noPerson/negative-frame-000019.png", Imgcodecs.IMREAD_GRAYSCALE);
+			img = Imgcodecs.imread("/home/acsa/Documentos/LP2/Projeto-LP2/person/positive-000411-mirror.png", Imgcodecs.IMREAD_GRAYSCALE);
 			Imgproc.resize(img, img, new Size(64,128), 0.5, 0.5, Imgproc.INTER_LINEAR);
 			hog.compute(img,features);
 			List<Float> arraydeFeatures = features.toList();

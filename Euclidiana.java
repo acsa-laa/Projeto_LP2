@@ -12,7 +12,7 @@ public class Euclidiana extends Knn {
 		int aux2 = 0;
 		int contperson = 0;
 		int contnotperson = 0;
-		String person = "\"person\"";
+		String person = listaImagens.get(0).getClasse();
 		for(int i=0; i<100; i++) {
 			Imagem a = listaImagens.get(i);
 			ArrayList<Float> b = a.getLista();

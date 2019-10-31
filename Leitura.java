@@ -1,4 +1,4 @@
-package projeto;
+package projeto_lp2;
 
 import java.io.FileReader;
 import java.io.IOException;

@@ -1,6 +1,10 @@
+package projeto_lp2;
+
 import java.util.ArrayList;
+import java.util.List;
+
 public class Knn {
-	public String KnnFunction(ArrayList<Imagem> listaImagens, ArrayList<Float> listaAtributos){;
+	public String KnnFunction(ArrayList<Imagem> listaImagens, List<Float> listaAtributos){;
 		float [] menores = new float[5];
 		Imagem [] menord = new Imagem[5];
 		float soma = 0;
@@ -8,7 +12,7 @@ public class Knn {
 		int aux2 = 0;
 		int contperson = 0;
 		int contnotperson = 0;
-		String person = listaImagens.get(0).getClasse();
+		String person = "\"person\"";
 		for(int i=0; i<100; i++) {
 			Imagem a = listaImagens.get(i);
 			ArrayList<Float> b = a.getLista();

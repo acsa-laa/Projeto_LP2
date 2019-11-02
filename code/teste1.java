@@ -3,13 +3,6 @@ package projeto_lp2;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import org.opencv.core.Core;
-import org.opencv.core.Mat;
-import org.opencv.core.MatOfFloat;
-import org.opencv.core.Size;
-import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.imgproc.Imgproc;
-import org.opencv.objdetect.HOGDescriptor;
 import java.util.List;
 
 public class teste1 {
@@ -22,25 +15,12 @@ public class teste1 {
 				Imagem imagem = new Imagem(leitura.getLista(), leitura.getClasse());
 				imagens.add(imagem);
 			}
-			/*for(Imagem i : imagens) {
-				for(Float f : i.getLista()) {
-					System.out.print(f + ",");
-				}
-				System.out.println(i.getClasse());
-				System.out.println();
-			}*/
-			System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-			HOGDescriptor hog = new HOGDescriptor();
-			Mat img = new Mat();
-			MatOfFloat features = new MatOfFloat();
-			img = Imgcodecs.imread("/home/acsa/Documentos/LP2/Projeto-LP2/person/positive-000109-mirror.png", Imgcodecs.IMREAD_GRAYSCALE);
-			Imgproc.resize(img, img, new Size(64,128), 0.5, 0.5, Imgproc.INTER_LINEAR);
-			hog.compute(img,features);
-			List<Float> arraydeFeatures = features.toList();
 			
+			TratamentoImagem d = new TratamentoImagem();
 			Knn a = new Euclidiana();
 			Knn b = new Manhattan();
 			Knn c = new Chebychev();
+			List<Float> arraydeFeatures = d.TratamentodaImagem("/home/acsa/Documentos/LP2/Projeto-LP2/person/positive-000200.png");
 			System.out.println(a.KnnFunction(3,imagens, arraydeFeatures));
 			System.out.println(b.KnnFunction(3,imagens, arraydeFeatures));
 			System.out.println(c.KnnFunction(3,imagens, arraydeFeatures));

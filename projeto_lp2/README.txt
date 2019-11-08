@@ -1,0 +1,1 @@
+Para a compilação e execução do programa é necessário possuir a máquina virtual java, opencv, javafx e o eclipse, todos devidamente instalados. Em seguida entrar no eclipse e criar um novo projeto e importar ambas as pastas (controle, visão e modelo), e por fim, clicar para rodar o programa.
